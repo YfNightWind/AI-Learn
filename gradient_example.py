@@ -20,10 +20,12 @@ x, y = 0.2, 0.35
 
 print(loss(x, w, b, y))
 
+# 学习率，解决数字过大的时候难解的问题
+lr = 1e-3
 # 迭代
-for i in range(10):
+for i in range(100):
     w_gradient = gradient(w, x, b, y)
-    w = w - w_gradient
+    w = w - w_gradient * lr
     print("w = ", w)
     print()
     print("loss = ", loss(x, w, b, y))
